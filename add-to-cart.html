@@ -41,8 +41,8 @@
               </div>
         
               <script>
-                  document.cookie = "name=cvalue; expires= Thu, 21 Aug 2020 20:00:00 UTC"
-                  document.cookie = "username=Rupesh Chaudhari";
+                  //document.cookie = "name=cvalue; expires= Thu, 21 Aug 2020 20:00:00 UTC"
+                  //document.cookie = "username=Rupesh Chaudhari";
                   //var c = document.cookie['username']
                   //console.log(document.cookie)
                   //console.log(c)
@@ -63,20 +63,31 @@
                         return "No Cookie found!";
                         }
                     
-                    console.log(document.cookie)
-                    console.log(getCookie('username'))
-                    console.log(getCookie('name'))
-                    console.log(getCookie('namse'))
+                    //console.log(document.cookie)
+                    //console.log(getCookie('username'))
+                    //console.log(getCookie('name'))
+                    //console.log(getCookie('namse'))
+                    var cart = {}
+                    cart['product_1'] =  0 
+                    cart['product_2'] =  0 
 
-                  function addtocart(product){
-                      console.log(product.product)
-                      document.cookie = "product="+product.product+"; expires= Thu, 21 Aug 2020 20:00:00 UTC"
-                      console.log("Add to Cart is Called.")
-                  };
 
-                  function showcart(){
-                      console.log("Cart : "+getCookie('product'))
-                  };
+                    function addtocart(product){
+                        //console.log(product.product)
+                        if(cart[product.product]){
+                            ++cart[product.product]
+                        }
+                        else{
+                            ++cart[product.product]
+                        }
+                        console.log(cart)
+                        //document.cookie = "cart="+cart+"; expires= Thu, 21 Aug 2020 20:00:00 UTC"
+                        //console.log("Add to Cart is Called.")
+                    };
+
+                    function showcart(){
+                        console.log("Cart : "+getCookie('cart'))
+                    };
 
               </script>
 
